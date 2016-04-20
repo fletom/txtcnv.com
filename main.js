@@ -19,6 +19,13 @@ $(function() {
 		},
 		'ASCII to binary': ABC.toBinary,
 		'binary to ASCII': ABC.toAscii,
+		'ROT-13': function(s) {
+			// from http://stackoverflow.com/a/28490254/179805 by Stephen Quan
+			return s.replace(/[A-Za-z]/g, function (c) {
+				return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+					.charAt("NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm".indexOf(c));
+			});
+		},
 	};
 	
 	$.each(conversions, function(k, v) {
