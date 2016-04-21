@@ -1,8 +1,3 @@
-function getParameterByName(name) {
-	var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
-	return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
-}
-
 $(function() {
 	var conversions = {
 		'uppercase': function(s) {
@@ -105,3 +100,10 @@ var ABC = {
     return "00000000".slice(String(num).length) + num
   }
 };
+
+
+// from http://stackoverflow.com/a/5158301/179805
+function getParameterByName(name) {
+	var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+	return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
