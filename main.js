@@ -33,6 +33,9 @@ $(function() {
 					.charAt("NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm".indexOf(c));
 			});
 		},
+		'reverse': function(s) {
+			return s.split("").reverse().join("");
+		},
 	};
 	
 	$.each(conversions, function(k, v) {
