@@ -50,7 +50,6 @@ $(function() {
 	$('#conversion').val(window.location.hash.replace(/^#!/, '') || 'uppercase')
 	
 	$('#convert').click(function(e) {
-		e.preventDefault();
 		convert();
 	});
 	
@@ -75,7 +74,6 @@ $(function() {
 	}
 	
 	$('#swap').click(function(e) {
-		e.preventDefault();
 		var input = $('#input').val();
 		var output = $('#output').val();
 		$('#input').val(output);
@@ -84,7 +82,6 @@ $(function() {
 	});
 	
 	$('#clear').click(function(e) {
-		e.preventDefault();
 		$('#input').val('');
 		$('#output').val('');
 	});
