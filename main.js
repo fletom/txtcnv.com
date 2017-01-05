@@ -6,12 +6,8 @@ $(function() {
 		'lowercase': function(s) {
 			return s.toLowerCase();
 		},
-		'URL encode': function(s) {
-			return encodeURIComponent(s);
-		},
-		'URL decode': function(s) {
-			return decodeURIComponent(s);
-		},
+		'URL encode': encodeURIComponent,
+		'URL decode': decodeURIComponent,
 		'ASCII to binary': ABC.toBinary,
 		'binary to ASCII': ABC.toAscii,
 		'escape HTML': function(s) {
