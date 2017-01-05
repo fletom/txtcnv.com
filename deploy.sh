@@ -1,7 +1,7 @@
 set -euf -o pipefail
 
 S3_BUCKET_NAME='txtcnv.com'
-EXCLUDE=('.DS_Store' 'deploy.sh' '.git/*')
+EXCLUDE=('.DS_Store' 'deploy.sh' '.git/*' '.idea/*')
 
 exclude_params=''
 for e in ${EXCLUDE[@]}; do
