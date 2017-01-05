@@ -41,13 +41,17 @@ $(function() {
 	$.each(conversions, function(k, v) {
 		$('#conversion').append($(new Option(k, k)));
 	});
-	
+
+	if (!Url.queryString('c')) {
+		 Url.updateSearchParam('c', 'reverse');
+	}
+	$('#conversion').val(Url.queryString('c'));
 	$('#conversion').change(function() {
-		window.location.hash = '#!' + $(this).val();
+		Url.updateSearchParam('c', $(this).val());
 		convertIfLive();
 	});
-	
-	$('#conversion').val(window.location.hash.replace(/^#!/, '') || 'uppercase')
+
+
 	
 	$('#convert').click(function(e) {
 		convert();
