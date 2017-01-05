@@ -41,9 +41,9 @@ $(function() {
 	if (!Url.queryString('c')) {
 		 Url.updateSearchParam('c', 'reverse');
 	}
-	$('#conversion').val(Url.queryString('c'));
+	$('#conversion').val(Url.queryString('c').replace(/_/g, ' '));
 	$('#conversion').change(function() {
-		Url.updateSearchParam('c', $(this).val());
+		Url.updateSearchParam('c', $(this).val().replace(/\s/g, '_'));
 		convertIfLive();
 	});
 
