@@ -131,6 +131,10 @@ $(function() {
 	$('#input').on('input', function() {
 		convertIfLive();
 	});
+
+	$('#output').on('click', function() {
+		this.setSelectionRange(0, this.value.length);
+	});
 });
 
 
