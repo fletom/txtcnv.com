@@ -102,6 +102,7 @@ $(function() {
 		}
 		catch(e) {
 			$('#input').addClass('error');
+			console.log(e);
 			return;
 		}
 		$('#input').removeClass('error');
