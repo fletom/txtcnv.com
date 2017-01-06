@@ -32,6 +32,47 @@ $(function() {
 		'reverse': function(s) {
 			return s.split("").reverse().join("");
 		},
+		'NATO phonetic alphabet': function(s) {
+			var table = {
+				'a': 'alpha',
+				'b': 'bravo',
+				'c': 'charlie',
+				'd': 'delta',
+				'e': 'echo',
+				'f': 'foxtrot',
+				'g': 'golf',
+				'h': 'hotel',
+				'i': 'india',
+				'j': 'juliet',
+				'k': 'kilo',
+				'l': 'lima',
+				'm': 'mike',
+				'n': 'november',
+				'o': 'oscar',
+				'p': 'papa',
+				'q': 'quebec',
+				'r': 'romeo',
+				's': 'sierra',
+				't': 'tango',
+				'u': 'uniform',
+				'v': 'victor',
+				'w': 'whiskey',
+				'x': 'x-ray',
+				'y': 'yankee',
+				'z': 'zulu',
+			};
+			return $.map(s.split(''), function (c) {
+				if (c in table) {
+					return table[c];
+				}
+				else if (c.toLowerCase() in table) {
+					return table[c.toLowerCase()].toUpperCase();
+				}
+				else {
+					return c;
+				}
+			}).join(' ');
+		},
 	};
 	
 	$.each(conversions, function(k, v) {
