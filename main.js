@@ -73,10 +73,19 @@ $(function() {
 				}
 			}).join(' ');
 		},
+		'a e s t h e t i c': function(s) {
+			return s.split('').join(' ').replace(/ /g, '\u00A0');
+		},
+		'a  e  s  t  h  e  t  i  c': function(s) {
+			return s.split('').join(' ').replace(/ /g, '\u00A0\u00A0');
+		},
 	};
 	
 	$.each(conversions, function(k, v) {
-		$('#conversion').append($(new Option(k, k)));
+		$('#conversion').append(
+			// convert multiple spaces to &nbsp; chars so they show up properly in the <select> box
+			$(new Option(k.replace(/  /g, '\u00A0\u00A0'), k))
+		);
 	});
 
 	if (!Url.queryString('c')) {
