@@ -88,11 +88,14 @@ $(function() {
 	if (!Url.queryString('c')) {
 		 Url.updateSearchParam('c', 'reverse');
 	}
-	$('#conversion').val(Url.queryString('c').replace(/_/g, ' '));
-	$('#conversion').change(function() {
+
+	$('#conversion').on('change', function() {
 		Url.updateSearchParam('c', $(this).val().replace(/ /g, '_'));
+		document.title = "txtcnv: " + $(this).find('option:selected').text();
 		convert();
 	});
+
+	$('#conversion').val(Url.queryString('c').replace(/_/g, ' ')).trigger('change');
 	
 	function convert() {
 		var conversion = conversions[$('#conversion').val()];
