@@ -91,12 +91,6 @@ $(function() {
 	$('#conversion').val(Url.queryString('c').replace(/_/g, ' '));
 	$('#conversion').change(function() {
 		Url.updateSearchParam('c', $(this).val().replace(/ /g, '_'));
-		convertIfLive();
-	});
-
-
-	
-	$('#convert').click(function(e) {
 		convert();
 	});
 	
@@ -115,27 +109,8 @@ $(function() {
 		$('#output').val(output);
 	}
 	
-	function convertIfLive() {
-		if ($('#live').prop('checked')) {
-			convert();
-		}
-	}
-	
-	$('#swap').click(function(e) {
-		var input = $('#input').val();
-		var output = $('#output').val();
-		$('#input').val(output);
-		$('#output').val(input);
-		convertIfLive();
-	});
-	
-	$('#clear').click(function(e) {
-		$('#input').val('');
-		$('#output').val('');
-	});
-	
 	$('#input').on('input', function() {
-		convertIfLive();
+		convert();
 	});
 
 	$('#output').on('click', function() {
