@@ -1,10 +1,12 @@
 body {
 	font-family: "Helvetica Neue", sans-serif;
 	font-weight: 300;
+	margin: 8px;
 }
 
 #input, #output {
 	width: 100%;
+	box-sizing: border-box;
 	height: 200px;
 	border-color: #AAA;
 }
