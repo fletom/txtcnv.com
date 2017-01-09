@@ -61,17 +61,14 @@ $(function() {
 				'y': 'yankee',
 				'z': 'zulu',
 			};
-			return $.map(s.split(''), function(c) {
+			return s.split('').join(' ').replace(/[a-zA-Z]/g, function(c) {
 				if (c in table) {
 					return table[c];
 				}
-				else if (c.toLowerCase() in table) {
+				else {
 					return table[c.toLowerCase()].toUpperCase();
 				}
-				else {
-					return c;
-				}
-			}).join(' ');
+			});
 		},
 		'a e s t h e t i c': function(s) {
 			return s.split('').join(' ').replace(/ /g, '\u00A0');
