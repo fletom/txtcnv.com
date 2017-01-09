@@ -61,7 +61,7 @@ $(function() {
 				'y': 'yankee',
 				'z': 'zulu',
 			};
-			return $.map(s.split(''), function (c) {
+			return $.map(s.split(''), function(c) {
 				if (c in table) {
 					return table[c];
 				}
@@ -84,7 +84,7 @@ $(function() {
 	}
 	$('#conversion').val(Url.queryString('c').replace(/_/g, ' '));
 	$('#conversion').change(function() {
-		Url.updateSearchParam('c', $(this).val().replace(/\s/g, '_'));
+		Url.updateSearchParam('c', $(this).val().replace(/ /g, '_'));
 		convertIfLive();
 	});
 
