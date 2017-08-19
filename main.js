@@ -76,6 +76,9 @@ $(function() {
 		'a  e  s  t  h  e  t  i  c': function(s) {
 			return s.split('').join(' ').replace(/ /g, '\u00A0\u00A0');
 		},
+		'strikethrough': function(s) {
+			return s.split('').join('\u0336') + '\u0336';
+		},
 	};
 	
 	$.each(conversions, function(k, v) {
